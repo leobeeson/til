@@ -87,3 +87,19 @@ Common Port Numbers:
       * `smtp`: 25
       * `pop3`: 110
       * `imap`: 143
+
+## What are network octets?
+
+* > The octet is a unit of digital information in computing and telecommunications that consists of eight bits.
+* > The term is often used when the term byte might be ambiguous, as the byte has historically been used for storage units of a variety of sizes.
+  * Source: [Wikipedia](https://en.wikipedia.org/wiki/Octet_(computing))
+* In computer and network technology, an octet represents an 8-bit quantity.
+* An octet is always eight bits.
+
+## Binary Conversion Table
+
+| Octate Bit | 2^7 | 2^6 | 2^5 | 2^4 | 2^3 | 2^2 | 2^1 | 2^0 |
+| ---------- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Binary     |  1  |  1  |  1  |  1  |  1  |  1  |  1  |  1  |
+| Decimal    | 128 |  64 |  32 |  16 |  8  |  4  |  2  |  1  |
+  
