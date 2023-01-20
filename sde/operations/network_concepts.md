@@ -96,10 +96,18 @@ Common Port Numbers:
 * In computer and network technology, an octet represents an 8-bit quantity.
 * An octet is always eight bits.
 
+## IPv4 Addresses
+
+* An address used to uniquely identify a device on an IP network.
+* An IPv4 address consists of 4 octets, i.e. it has 32 bits.
+* The decimal value in each octet is in the range 0 to 255.
+* e.g.:
+  * Decimal: 10.129.16.123
+  * Binary: 00001010.10000001.0001000.01111011
+
 ## Binary Conversion Table
 
 | Octate Bit | 2^7 | 2^6 | 2^5 | 2^4 | 2^3 | 2^2 | 2^1 | 2^0 |
 | ---------- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Binary     |  1  |  1  |  1  |  1  |  1  |  1  |  1  |  1  |
 | Decimal    | 128 |  64 |  32 |  16 |  8  |  4  |  2  |  1  |
-  
