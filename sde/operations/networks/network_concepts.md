@@ -111,3 +111,7 @@ Common Port Numbers:
 | ---------- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Binary     |  1  |  1  |  1  |  1  |  1  |  1  |  1  |  1  |
 | Decimal    | 128 |  64 |  32 |  16 |  8  |  4  |  2  |  1  |
+
+## Binary Conversion Calculator
+
+Find code [here](binary_calculator.py).
