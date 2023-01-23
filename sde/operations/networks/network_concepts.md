@@ -132,12 +132,18 @@ Common Port Numbers:
 
 ## IPv4 Addresses
 
-* An address used to uniquely identify a device on an IP network.
+* It is a `Layer 3` address asigned by an administrator.
+* It is used to uniquely identify a device on an IP network.
+* Every device on the internet has a unique IP address.
 * An IPv4 address consists of 4 octets, i.e. it has 32 bits.
 * The decimal value in each octet is in the range 0 to 255.
 * e.g.:
   * Decimal: 10.129.16.123
   * Binary: 00001010.10000001.0001000.01111011
+
+## IPv6 Addresses
+
+* Introduced because of IPv4 address exhaustion.
 
 ## Binary Conversion Table
 
@@ -158,7 +164,17 @@ Find code [here](binary_calculator.py).
 
 ## MAC Addresses
 
+* It is a `Layer 2` address built into the [NIC](network_concepts.md#nic)
 * A MAC address (aka physical address) is composed of 12 hexadecimal values, grouped in 3 sets of 4.
   * The first 6 hex values represent the hardware vendor code, and the remaining 6 hex values represent unique identifier for the MAC address.
 * A MAC address is 48 bits long.
   * i.e. 16 hex values, each of 4 bits.
+
+## NIC
+
+* `NIC`: Network Interface Card
+  * AKA: Network Interface Controller
+
+## Router
+
+* Routes traffic to a destination IP address based on hierarchy network and host.
