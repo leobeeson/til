@@ -122,7 +122,7 @@ Common Port Numbers:
     * `pop3`: 110
     * `imap`: 143
 
-## What are network octets?
+## Octet
 
 * > The octet is a unit of digital information in computing and telecommunications that consists of eight bits.
 * > The term is often used when the term byte might be ambiguous, as the byte has historically been used for storage units of a variety of sizes.
@@ -135,6 +135,27 @@ Common Port Numbers:
 * It is a `Layer 3` address asigned by an administrator.
 * It is used to uniquely identify a device on an IP network.
 * Every device on the internet has a unique IP address.
+* IPv4 is a "Connectionless Protocol":
+  * There are no sessions formed when traffic is transmitted.
+  * The transmitter simply sends data without notification to the receiver.
+  * No status information is sent back from the receiver to the transmitter.
+  * For a connectione oriented protocol, there is TCP.
+* Packets are treated independently of ther packets.
+  * Hence different packages may take different paths to get to its destination, as routers can make a routing decision based on:
+    * Load balancing
+    * Bandwidth (OSPF)
+    * Hopcount (RIP)
+* IPv4 offers "best effort delivery" of packet.
+  * There is no guarantee of packet delivery.
+  * It could be:
+    * Misdirected
+    * Duplicated
+    * Lost in transmission
+  * No data recovery reatures:
+    * If packet gets corrupted in traffic, the end devices need to handle that.
+
+### IPv4 Format Overview
+
 * An IPv4 address consists of 4 octets, i.e. it has 32 bits.
 * The decimal value in each octet is in the range 0 to 255.
 * e.g.:
@@ -144,6 +165,29 @@ Common Port Numbers:
 ## IPv6 Addresses
 
 * Introduced because of IPv4 address exhaustion.
+
+## Public vs Private Addresses
+
+* Get the IP Address of a domain name -> `nslookup`
+
+  Command:
+
+  ```bash
+  nslookup www.google.com
+  ```
+
+  Output:
+
+  ```bash
+  Server:         172.28.48.1
+  Address:        172.28.48.1#53
+
+  Non-authoritative answer:
+  Name:   www.google.com
+  Address: 142.250.200.4
+  Name:   www.google.com
+  Address: 2a00:1450:4009:822::2004
+  ```
 
 ## Binary Conversion Table
 
@@ -177,4 +221,19 @@ Find code [here](binary_calculator.py).
 
 ## Router
 
-* Routes traffic to a destination IP address based on hierarchy network and host.
+* Routes traffic to a destination IP address based on a hierarchical addressing structure:
+  * The IPv4 and IPv6 address have a network and host portion.
+  * Routers base their routing decisions based on the network portion of the address, rather than on the host portion.
+
+## TCP
+
+* TCP: Transmision Control Protocol
+* TCP will set up a session before transmiting data, via the Three-Way Handshake.
+* Three-Way Handshake:
+  * The transmitter sends a `SYN` (or synchronization message) to the receiver.
+  * The receiver sends a `SYN Ack` (or synchronization acknowledgement message) to the transmitter.
+  * The transmitter sends an `Ack` (or acknowledgement message) to the receiver.
+
+## UDP
+
+* UDP: User Datagram Protocol
