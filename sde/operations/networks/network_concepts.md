@@ -162,6 +162,17 @@ Common Port Numbers:
   * Decimal: 10.129.16.123
   * Binary: 00001010.10000001.0001000.01111011
 
+## Network Address Portion
+
+* AKA, `Network ID`
+* Identifies a specific network.
+
+## Host Address Portion
+
+* AKA, `Host ID`
+* Identify a specific endpoint on a network.
+  * e.g. server, printers, PCs, smartphones, tablets, etc.
+
 ## IPv6 Addresses
 
 * Introduced because of IPv4 address exhaustion.
@@ -222,8 +233,10 @@ Find code [here](binary_calculator.py).
 ## Router
 
 * Routes traffic to a destination IP address based on a hierarchical addressing structure:
-  * The IPv4 and IPv6 address have a network and host portion.
-  * Routers base their routing decisions based on the network portion of the address, rather than on the host portion.
+  * IPv4 and IPv6 addresses have a [network address portion](network_concepts.md#network-address-portion) and a [host address portion](network_concepts.md#host-address-portion).
+* Routers don't route traffic to an IP Address, but by using only the [network address portion](network_concepts.md#network-address-portion) of an IP address.
+* Routers maintain routing tables that contain network addresses.
+* Routers look at the destination IP address in a packet and match that to a network address in their routing table.
 
 ## TCP
 
