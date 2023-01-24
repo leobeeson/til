@@ -200,6 +200,25 @@ Common Port Numbers:
   Address: 2a00:1450:4009:822::2004
   ```
 
+## Address Classes
+
+* Address classes were used between 1981 and 1993, when classless domain routing was introduced in 1993.
+* They divided IPv4 addresses into 5 classes:
+  * Unicast Traffic:
+    * Class A
+    * Class B
+    * Class C
+  * Class D: Multicast Traffic
+  * Class E: Reserved for future or experimental purposes.
+* In IPv4, address classes has been replaced with CIDR.
+* IPv6 does not use address classes.
+
+### Unicast Traffic Classes
+
+* Class A:
+* Class B:
+* Class C:
+
 ## Binary Conversion Table
 
 | Octat Bit  | 2^7 | 2^6 | 2^5 | 2^4 | 2^3 | 2^2 | 2^1 | 2^0 |
