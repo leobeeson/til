@@ -216,6 +216,13 @@ Common Port Numbers:
 ### Unicast Traffic Classes
 
 * Class A:
+  * Starts with a binary 0.
+  * Binary range: 0.0.0.0 - 127.255.255.255
+    * i.e. 00000000.00000000.00000000.00000000 - 0111111.11111111.11111111.11111111
+  * Exceptions:
+    * 127.0.0.1 is reserved for loopback.
+    * 0.1.1.1 is reserved for default network.
+  * Actual range: 1.0.0.0 - 126.255.255.255
 * Class B:
 * Class C:
 
