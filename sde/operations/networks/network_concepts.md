@@ -270,6 +270,30 @@ Common Port Numbers:
 * Binary range: `240.0.0.0` - `255.255.255.255`
   * i.e. `11110000.00000000.00000000.00000000` - `11111111.11111111.11111111.11111111`
 
+## Special Addresses
+
+* Directed Broadcast Address:
+  * Used by the host to send data to all devices on a specific network.
+  * Binary `1`s in the entire host portion of the address.
+  * e.g.:
+    * In a network `172.31.0.0` (i.e. Class B)
+    * Directed Broadcast: `172.31.255.255`
+  * Routers can route Directed Broadcasts, but are **disabled by default** to avoid hacks.
+    * There are hacking utilities that can be downloaded, e.g. `smurf`.
+    * Used for Denial of Service Attacks.
+    * Every host on the same network would:
+      * Receive the broadcast.
+      * Accept the broadcast.
+      * Forwards it to higher level protocol for processing.
+    * All of the above actions consume CPU resources on the host.
+    * Every host on the network that received the directed broadcast would return a response to the sender device (source address).
+    * This avalanche of responses to the source address would cause the Denial of Service on the sender device.
+    * A hacker would send the directed broadcast from a different device than the target device, but on the same network, and point the source address to the target device.
+
+## Network Masks
+
+## CIDR
+
 ## Binary Conversion Table
 
 | Octat Bit  | 2^7 | 2^6 | 2^5 | 2^4 | 2^3 | 2^2 | 2^1 | 2^0 |
