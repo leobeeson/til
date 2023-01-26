@@ -59,10 +59,10 @@ Common Protocol Numbers:
 
 | Decimal | Keyword | Protocol |
 | ------- | ------- | -------- |
-| 4	| IPv4	| IPv4 encapsulation| 
-| 6	 | TCP |	Transmission Control |
-| 17 | 	UDP |	User Datagram |
-| 41 | 	IPv6 |	IPv6 encapsulation |
+| 4 | IPv4 | IPv4 encapsulation|
+| 6  | TCP | Transmission Control |
+| 17 |  UDP | User Datagram |
+| 41 |  IPv6 | IPv6 encapsulation |
 
 ## Port Number Registry
 
@@ -78,7 +78,7 @@ Common Port Numbers:
 | telnet | 23 | Telnet |
 | smtp | 25 | Simple Mail Transfer |
 | domain | 53 | Domain Name Server (DNS) |
-| tftp	| 69	| Trivial File Transfer |
+| tftp | 69 | Trivial File Transfer |
 | http | 80 | Hypertext Transfer Protocol |
 | www | 80 | World Wide Web |
 | sftp* | 115 | Simple File Transfer Protocol |
@@ -205,26 +205,70 @@ Common Port Numbers:
 * Address classes were used between 1981 and 1993, when classless domain routing was introduced in 1993.
 * They divided IPv4 addresses into 5 classes:
   * Unicast Traffic:
+    * When one device talks to another single device.
     * Class A
     * Class B
     * Class C
-  * Class D: Multicast Traffic
-  * Class E: Reserved for future or experimental purposes.
+  * Multicast Traffic:
+    * When one device talks to multiple devices.
+    * Class D
+  * Reserved Addresses:
+    * Reserved for future or experimental purposes.
+    * Class E
 * In IPv4, address classes has been replaced with CIDR.
 * IPv6 does not use address classes.
 
-### Unicast Traffic Classes
+### Class A
 
-* Class A:
-  * Starts with a binary 0.
-  * Binary range: 0.0.0.0 - 127.255.255.255
-    * i.e. 00000000.00000000.00000000.00000000 - 0111111.11111111.11111111.11111111
-  * Exceptions:
-    * 127.0.0.1 is reserved for loopback.
-    * 0.1.1.1 is reserved for default network.
-  * Actual range: 1.0.0.0 - 126.255.255.255
-* Class B:
-* Class C:
+* Starts with a binary `0`.
+* Binary range: `0.0.0.0` - `127.255.255.255`
+  * i.e. `00000000.00000000.00000000.00000000` - `0111111.11111111.11111111.11111111`
+* Exceptions:
+  * `127.0.0.1` is reserved for loopback.
+  * `0.1.1.1` is reserved for default network.
+* Actual range: `1.0.0.0` - `126.255.255.255`
+* Network Address Portion:
+  * 1st octet
+* Host Address Portion:
+  * 2nd octet
+  * 3rd octet
+  * 4th octet
+
+### Class B
+
+* Starts with binary `10`.
+* Binary range: `128.0.0.0` - `191.255.255.255`
+  * i.e. `10000000.00000000.00000000.00000000` - `10111111.11111111.11111111.11111111`
+* Network Address Portion:
+  * 1st octet
+  * 2nd octet
+* Host Address Portion:
+  * 3rd octet
+  * 4th octet
+
+### Class C
+  
+* Starts with binary `110`.
+* Binary range: `192.0.0.0` - `223.255.255.255`
+  * i.e. `11000000.00000000.00000000.00000000` - `11011111.11111111.11111111.11111111`
+* Network Address Portion:
+  * 1st octet
+  * 2nd octet
+  * 3rd octet
+* Host Address Portion:
+  * 4th octet
+
+### Class D
+
+* Starts with binary `1110`.
+* Binary range: `224.0.0.0` - `239.255.255.255`
+  * i.e. `11100000.00000000.00000000.00000000` - `11101111.11111111.11111111.11111111`
+
+### Class E
+
+* Starts with binary `1111`.
+* Binary range: `240.0.0.0` - `255.255.255.255`
+  * i.e. `11110000.00000000.00000000.00000000` - `11111111.11111111.11111111.11111111`
 
 ## Binary Conversion Table
 
