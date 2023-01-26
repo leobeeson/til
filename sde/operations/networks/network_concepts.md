@@ -272,27 +272,51 @@ Common Port Numbers:
 
 ## Special Addresses
 
-* Directed Broadcast Address:
-  * Used by the host to send data to all devices on a specific network.
-  * Binary `1`s in the entire host portion of the address.
-  * e.g.:
-    * In a network `172.31.0.0` (i.e. Class B)
-    * Directed Broadcast: `172.31.255.255`
-  * Routers can route Directed Broadcasts, but are **disabled by default** to avoid hacks.
-    * There are hacking utilities that can be downloaded, e.g. `smurf`.
-    * Used for Denial of Service Attacks.
-    * Every host on the same network would:
-      * Receive the broadcast.
-      * Accept the broadcast.
-      * Forwards it to higher level protocol for processing.
-    * All of the above actions consume CPU resources on the host.
-    * Every host on the network that received the directed broadcast would return a response to the sender device (source address).
-    * This avalanche of responses to the source address would cause the Denial of Service on the sender device.
-    * A hacker would send the directed broadcast from a different device than the target device, but on the same network, and point the source address to the target device.
+### Directed Broadcast Address
+
+* Used by the host to send data to all devices on a specific network.
+* Binary `1`s in the entire host portion of the address.
+* e.g.:
+  * In a network `172.31.0.0` (i.e. Class B)
+  * Directed Broadcast: `172.31.255.255`
+* Routers can route Directed Broadcasts, but are **disabled by default** to avoid hacks.
+  * There are hacking utilities that can be downloaded, e.g. `smurf`.
+  * Used for Denial of Service Attacks.
+  * Every host on the same network would:
+    * Receive the broadcast.
+    * Accept the broadcast.
+    * Forwards it to higher level protocol for processing.
+  * All of the above actions consume CPU resources on the host.
+  * Every host on the network that received the directed broadcast would return a response to the sender device (source address).
+  * This avalanche of responses to the source address would cause the Denial of Service on the sender device.
+  * A hacker would send the directed broadcast from a different device than the target device, but on the same network, and point the source address to the target device.
+
+## Local Broadcast Address
+
+* Used to communicate with all devices on a local network.
+* The address is all binary `1`s, i.e.:
+  * `11111111.11111111.11111111.11111111`
+  * `255.255.255.255`
+* It is used for:
+  * When a host requests an IP address from a DHCP server (because it hasn't been assigned one yet), i.e.
+    * A new device boots up (or connects to a wifi router) and sends a broadcast via the Local Broadcast Address.
+    * The DHCP server hears that broadcast.
+    * The DHCP server then allocates an IP address to the host from a pool or scope of IP addresses.
+* It is always dropped by `Layer 3` devices such as routers and `Layer 3` switches.
+  * So two devices on different networks can't communicate over Local Broadcast Address because the router or switch will not relay the broadcast.
+  * You can override such functionality by enabling `IP forwarding` AKA `DHCP forwarding` AKA `DHCP relay`, so your router or switch can forward the broadcast to the DHCP server on the other local network.
+    * Technically, the broadcast on the Local Broadcast Address would be dropped by the router/switch, but it would send a unicast DHCP request to the DHCP server on behalf of the sender device.
+    * This would allow the router/switch to proxy the DHCP request on behalf of the sender device.
 
 ## Network Masks
 
 ## CIDR
+
+## DHCP Server
+
+* DHCP: Dynamic Host Configuration Protocol
+* Provides IP addresses dynamically to devices such as PCs, smart phones, tablets, ip telephones, etc.
+* Enables users to not have to manually assign an IP address to every device on his network.
 
 ## Binary Conversion Table
 
