@@ -291,6 +291,16 @@ Common Port Numbers:
   * This avalanche of responses to the source address would cause the Denial of Service on the sender device.
   * A hacker would send the directed broadcast from a different device than the target device, but on the same network, and point the source address to the target device.
 
+### Local Loopback Address
+
+* Used to let a system send a message to itself.
+  * This is useful to make sure that the TCP/IP stack is correctly installed on a machine. #DOUBT
+* Any IP address on the 127.X.X.X network is a Local Loopback Address.
+  * Normally used: `127.0.0.1`
+  * However, it's a Class A address, hence ~16 million IPv4 addresses were wasted with this setup.
+* In IPv6, the Local Loopback Address is `::1` (this way no addresses are wasted as in IPv4).
+* NB: Routers and switches also have loopback addresses, which are not the same as _local_ loopback addresses.
+
 ## Local Broadcast Address
 
 * Used to communicate with all devices on a local network.
