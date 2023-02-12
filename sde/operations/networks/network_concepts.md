@@ -189,6 +189,20 @@ Common Port Numbers:
 * Private addresses will not be accepted by Internet Service Providers (ISP) and therefore will not be routed on to the internet.
   * Unless an ISP forgot to add an access list blocking traffic from Private Addresses.
 
+## Link - Local Addresses
+
+* RFC-3927: Dynamic Configuration of IPv4 Link - Local Addresses
+  * Microsoft refers to it as:
+    * APIPA: Automatic Private IP Address
+* Used for when a PC is configured for DHCP, but not [DCHP Server](network_concepts.md#dhcp-server) is available.
+  * An IP address cannot be allocated via DHCP, therefore the PC automatically chooses an IP address in the range:
+    * `169.254.0.0/16`
+  * Allow two computers to communicate when there are no DHCP server available.
+  * Can immediately communicate without configuration.
+  * Host randomly generate host-specific part of the address.
+  * The two computers can be connected via a cable or a local segment through a switch.
+  * Traffic on this range of addresses is not routable on to the internet or devices on a different subnet.
+
 ## Public vs Private Addresses
 
 * Get the IP Address of a domain name -> `nslookup`
