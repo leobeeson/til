@@ -344,11 +344,12 @@ Common Port Numbers:
     * Technically, the broadcast on the Local Broadcast Address would be dropped by the router/switch, but it would send a unicast DHCP request to the DHCP server on behalf of the sender device.
     * This would allow the router/switch to proxy the DHCP request on behalf of the sender device.
 
-## Network Masks
+## Network/Subnet Masks
 
 * Devices on the same network (subnet) can communicate directly without the use of a default gateway.
 * Used to determine which part of an IP address is the network portion, and which part is the host portion.
 * Allows a device to determine whether a device that it wants to communicate with is a remote device or a local device.
+* A logical `AND` operation is performed between the binary number of the IP address and the binary number of the mask.
 * Class A, B, and C networks have default masks, AKA natural masks:
   * Class A: `255.0.0.0`
   * Class B: `255.255.0.0`
@@ -373,9 +374,16 @@ Common Port Numbers:
   * Network ID: `1.1._._` -> `1.1.0.0`
   * Host ID:    `_._.1.1` -> `1.1.1.1`
 
-## Subnet Masks
-
 ## CIDR
+
+* CIDR: Classless Inter-Domain Routing.
+* CIDR is based on variable-length subnet masking (VLSM):
+  * Network prefixes have variable length (as opposed to the fixed-length prefixing of the previous classful network design). 
+  * The main benefit of this is:
+    * It grants finer control of the sizes of subnets allocated to organizations, hence
+    * slowing the exhaustion of IPv4 addresses from allocating larger subnets than needed.
+* CIDR gave rise to a new way of writing IP addresses known as CIDR notation:
+  * An IP address is followed by a suffix indicating the number of bits of the prefix.
 
 ## DHCP Server
 
