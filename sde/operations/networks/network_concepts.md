@@ -177,6 +177,14 @@ Common Port Numbers:
 
 * Introduced because of IPv4 address exhaustion.
 
+## Private Addresses
+
+* Formalised via RFC-1918.
+* 3 blocks of IP address space reserved for private internets:
+  * `10.0.0.0` - `10.255.255.255` (10/8 prefix)
+  * `172.16.0.0` - `172.31.255.255` (172.16/12 prefix)
+  * `182.168.0.0` - `192.168.255.255` (192.168/16 prefix)
+
 ## Public vs Private Addresses
 
 * Get the IP Address of a domain name -> `nslookup`
@@ -327,6 +335,11 @@ Common Port Numbers:
 * DHCP: Dynamic Host Configuration Protocol
 * Provides IP addresses dynamically to devices such as PCs, smart phones, tablets, ip telephones, etc.
 * Enables users to not have to manually assign an IP address to every device on his network.
+
+## RFC
+
+* RFC: Request for Comments
+* RFC1149
 
 ## Binary Conversion Table
 
