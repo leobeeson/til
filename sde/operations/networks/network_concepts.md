@@ -346,6 +346,35 @@ Common Port Numbers:
 
 ## Network Masks
 
+* Devices on the same network (subnet) can communicate directly without the use of a default gateway.
+* Used to determine which part of an IP address is the network portion, and which part is the host portion.
+* Allows a device to determine whether a device that it wants to communicate with is a remote device or a local device.
+* Class A, B, and C networks have default masks, AKA natural masks:
+  * Class A: `255.0.0.0`
+  * Class B: `255.255.0.0`
+  * Class C: `255.255.255.0`
+* The network portion of the mask consists of contiguous `1`s starting from the left hand side.
+* The host portion of the mask consists of contiguous `0`s.
+* e.g. 1:
+  * Class A network (that has not been subnetted) would have an address/mask:
+  * `10.1.1.1/255.0.0.0`
+  * Convert to binary:
+    * `10.1.1.1`:   `00001010.0000001.00000001.00000001`
+    * `255.0.0.0`:  `11111111.00000000.00000000.00000000`
+  * Hence, this device with IP address of `10.1.1.1` is on network `10.0.0.0`.
+* Two simple rules:
+  * Any address bits which have a corresponding mask bit set to `1` represent the network ID.
+  * Any address bits which have a corresponding mask bit set to `0` represent the host.
+* e.g. 2:
+  * `1.1.1.1/255.255.0.0`
+  * Convert to binary:
+    * `1.1.1.1`:      `00000001.00000001.00000001.00000001`
+    * `255.255.0.0`:  `11111111.11111111.00000000.00000000`
+  * Network ID: `1.1._._` -> `1.1.0.0`
+  * Host ID:    `_._.1.1` -> `1.1.1.1`
+
+## Subnet Masks
+
 ## CIDR
 
 ## DHCP Server
