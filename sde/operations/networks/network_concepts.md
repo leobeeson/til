@@ -181,9 +181,13 @@ Common Port Numbers:
 
 * Formalised via RFC-1918.
 * 3 blocks of IP address space reserved for private internets:
-  * `10.0.0.0` - `10.255.255.255` (10/8 prefix)
-  * `172.16.0.0` - `172.31.255.255` (172.16/12 prefix)
-  * `182.168.0.0` - `192.168.255.255` (192.168/16 prefix)
+  * 1 Class A Network:      `10.0.0.0` - `10.255.255.255`     (10/8 prefix)
+  * 16 Class B Networks:    `172.16.0.0` - `172.31.255.255`   (172.16/12 prefix)
+  * 256 Class 6 Networks:   `182.168.0.0` - `192.168.255.255` (192.168/16 prefix)
+* They are non-routable on the Internet.
+* To send traffic from a private address to a private address, the private address must be Network Address Translated (NAT) to a public IP address.
+* Private addresses will not be accepted by Internet Service Providers (ISP) and therefore will not be routed on to the internet.
+  * Unless an ISP forgot to add an access list blocking traffic from Private Addresses.
 
 ## Public vs Private Addresses
 
@@ -339,7 +343,10 @@ Common Port Numbers:
 ## RFC
 
 * RFC: Request for Comments
-* RFC1149
+* Internet Protocol (IP) traffic by birds:
+  * RFC-1149: IP over Avian Carriers
+  * RFC-2549: IP over Avian Carriers with Quality of Service
+  * RFC 6214: Adaptation of RFC 1149 for IPv
 
 ## Binary Conversion Table
 
